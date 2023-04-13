@@ -1,9 +1,12 @@
 import { useState } from "react"
 
 
+//square component
 function Square() {
-  const [value, setValue] = useState(null)
+  //state 
+  // const [value, setValue] = useState(null)
 
+  // handleClick sets 'X'
   function handleClick() {
     setValue('X')
     console.log('Clicked dat ho!')
@@ -16,8 +19,12 @@ function Square() {
   </button>
 }
 
-
 export default function Board() {
+
+  // Lift state to parent for ease of communication
+  const [squares, setSquares] = useState(Array(9).fill(null))
+
+  
   return (
     <>
       <div className="board-row">
