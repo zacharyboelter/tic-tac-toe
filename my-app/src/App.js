@@ -12,13 +12,22 @@ function Square({ value, onSquareClick}) {
 export default function Board() {
   // Lift state to parent for ease of communication
   // creates an array with nine elements and sets each of them to null
+  const [xIsNext, setXIsNext] = useState(true)
   const [squares, setSquares] = useState(Array(9).fill(null))
 
   // handle click func, nextSquares creates copy of squares array
   function handleClick(i){
+    if (squares[i]){
+      return
+    }
     const nextSquares = squares.slice()
-    nextSquares[i] = 'X'
+    if (xIsNext){
+      nextSquares[i] = 'X'
+    } else {
+      nextSquares[i] = 'O'
+    }
     setSquares(nextSquares)
+    setXIsNext(!xIsNext)
   }
 
   return (
