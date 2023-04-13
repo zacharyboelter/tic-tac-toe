@@ -22,9 +22,10 @@ function Square() {
 export default function Board() {
 
   // Lift state to parent for ease of communication
+  // creates an array with nine elements and sets each of them to null
   const [squares, setSquares] = useState(Array(9).fill(null))
 
-  
+
   return (
     <>
       <div className="board-row">
