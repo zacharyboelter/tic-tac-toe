@@ -9,7 +9,7 @@ function Square({ value, onSquareClick}) {
   </button>
 }
 
-export default function Board() {
+function Board() {
   // Lift state to parent for ease of communication
   // creates an array with nine elements and sets each of them to null
   const [xIsNext, setXIsNext] = useState(true)
@@ -78,4 +78,22 @@ function calculateWinner(squares){
     }
   }
   return null
+}
+
+
+export default function Game(){
+    //lift state to Game function
+
+  return(
+    <>
+      <div className='game'>
+        <div className='game-board'>
+          <Board />
+        </div>
+        <div className='game-info'>
+          <ol>{}</ol>
+        </div>
+      </div>
+    </>
+  )
 }
