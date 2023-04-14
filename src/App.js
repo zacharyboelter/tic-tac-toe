@@ -17,7 +17,7 @@ export default function Board() {
 
   // handle click func, nextSquares creates copy of squares array
   function handleClick(i){
-    if (squares[i] || calculateWinner(sqaures)){
+    if (squares[i] || calculateWinner(squares)){
       return
     }
     const nextSquares = squares.slice()
@@ -29,9 +29,17 @@ export default function Board() {
     setSquares(nextSquares)
     setXIsNext(!xIsNext)
   }
+  const winner = calculateWinner(squares)
+  let status
+  if (winner) {
+    status = "Winner: " + winner
+  } else {
+    status = "Your Move: " + (xIsNext ? "X" : "O") + ". make a play, bitch."
+  }
 
   return (
     <>
+    <div className="status">{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={()=> handleClick(0)} />
         <Square value={squares[1]} onSquareClick={()=> handleClick(1)} />
@@ -65,7 +73,7 @@ function calculateWinner(squares){
   ]
   for (let i = 0; i < lines.length; i++){
     const [a, b, c] = lines[i]
-    if (squares[a] && sqaures[a] === squares[b] && squares[a] === squares[c]){
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
       return squares[a]
     }
   }
