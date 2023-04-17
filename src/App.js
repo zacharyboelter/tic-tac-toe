@@ -84,6 +84,7 @@ function calculateWinner(squares){
 export default function Game(){
     //lift state to Game function
 
+   const [xIsNext, setXIsNext] = useState
   return(
     <>
       <div className='game'>
