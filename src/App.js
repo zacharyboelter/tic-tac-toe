@@ -12,8 +12,7 @@ function Square({ value, onSquareClick}) {
 function Board() {
   // Lift state to parent for ease of communication
   // creates an array with nine elements and sets each of them to null
-  const [xIsNext, setXIsNext] = useState(true)
-  const [squares, setSquares] = useState(Array(9).fill(null))
+  
 
   // handle click func, nextSquares creates copy of squares array
   function handleClick(i){
@@ -83,8 +82,9 @@ function calculateWinner(squares){
 
 export default function Game(){
     //lift state to Game function
-
-   const [xIsNext, setXIsNext] = useState
+    const [xIsNext, setXIsNext] = useState(true)
+    const [history, setHistory] = useState(Array(9).fill(null))
+    
   return(
     <>
       <div className='game'>
