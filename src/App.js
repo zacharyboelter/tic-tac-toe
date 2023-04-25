@@ -84,6 +84,7 @@ export default function Game(){
     //lift state to Game function
     const [xIsNext, setXIsNext] = useState(true)
     const [history, setHistory] = useState(Array(9).fill(null))
+    const currentSqaures = history[history.length - 1]
     
   return(
     <>
@@ -100,4 +101,3 @@ export default function Game(){
 }
 
 
-// Okay, i am out of the hospital. Finish this project tomrrow and find another. Either egghead or something else
