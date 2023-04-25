@@ -9,7 +9,7 @@ function Square({ value, onSquareClick}) {
   </button>
 }
 
-function Board() {
+function Board({xIsNext, squares, onPlay}) {
 
   // handle click func, nextSquares creates copy of squares array
   function handleClick(i){
@@ -91,7 +91,7 @@ export default function Game(){
     <>
       <div className='game'>
         <div className='game-board'>
-          <Board xIsNext={xIsNext} sqaures={currentSqaures} onClick={handlePlay} />
+          <Board xIsNext={xIsNext} sqaures={currentSqaures} onPlay={handlePlay} />
         </div>
         <div className='game-info'>
           <ol>{}</ol>
