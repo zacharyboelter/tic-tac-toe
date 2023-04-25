@@ -10,9 +10,6 @@ function Square({ value, onSquareClick}) {
 }
 
 function Board() {
-  // Lift state to parent for ease of communication
-  // creates an array with nine elements and sets each of them to null
-  
 
   // handle click func, nextSquares creates copy of squares array
   function handleClick(i){
@@ -85,12 +82,16 @@ export default function Game(){
     const [xIsNext, setXIsNext] = useState(true)
     const [history, setHistory] = useState(Array(9).fill(null))
     const currentSqaures = history[history.length - 1]
+
+    function handlePlay(nextSquares){
+
+    } 
     
   return(
     <>
       <div className='game'>
         <div className='game-board'>
-          <Board />
+          <Board xIsNext={xIsNext} sqaures={currentSqaures} onClick={handlePlay} />
         </div>
         <div className='game-info'>
           <ol>{}</ol>
