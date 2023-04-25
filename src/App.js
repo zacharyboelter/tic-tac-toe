@@ -98,3 +98,6 @@ export default function Game(){
     </>
   )
 }
+
+
+// Okay, i am out of the hospital. Finish this project tomrrow and find another. Either egghead or something else
